@@ -1,0 +1,81 @@
+@use "sass:color";
+
+$base-color-1: red;
+$base-color-2: blue;
+$base-color-3: green;
+
+$font-color: white;
+
+$containers: (
+  1: $base-color-1,
+  2: $base-color-2,
+  3: $base-color-3
+);
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  padding: 30px;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+[class^="container-"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: capitalize;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+@mixin changeStyleDarken($base-color, $font-color, $level) {
+  background-color: color.adjust($base-color, $lightness: $level * -5%);
+  color: color.adjust($font-color, $lightness: $level * 100%);
+}
+
+@mixin changeStyleLighten($base-color, $font-color, $level) {
+  background-color: color.adjust($base-color, $lightness: $level * 5%);
+  color: color.adjust($font-color, $lightness: $level * -90%);
+}
+
+@each $i, $mainColor in $containers {
+
+  .container-#{$i} > .base-color {
+    background-color: $mainColor;
+  }
+
+  @for $indexContainer from 1 through 4 {
+    .container-#{$i} > .lighten-#{$indexContainer} {
+      @include changeStyleLighten($mainColor, $font-color, $indexContainer);
+    }
+  }
+
+  @for $indexContainer from 1 through 4 {
+    .container-#{$i} > .darken-#{$indexContainer} {
+      @include changeStyleDarken($mainColor, $font-color, $indexContainer);
+    }
+  }
+}
