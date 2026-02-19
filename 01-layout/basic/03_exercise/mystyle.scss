@@ -1,0 +1,56 @@
+body {
+    margin: 10px;
+    padding: 0;
+}
+
+.title-nav {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 0 10px;
+    font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    gap: 0rem;
+    padding: 10px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f6a7c; 
+    color: white;
+    padding: 10px;
+    width: 200px;
+    height: fit-content;
+    font-size: 16px;
+    border: none;
+}
+
+.button:hover {
+    background-color: #324859; 
+    color: #f0f0f0;
+    cursor: pointer;
+}
+
+.navigation .button:first-child {
+    justify-content: flex-start;
+}
+
+.navigation .button:last-child {
+    justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+    .navigation {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .navigation .button:first-child,
+    .navigation .button:last-child {
+        justify-content: center;
+    }
+}

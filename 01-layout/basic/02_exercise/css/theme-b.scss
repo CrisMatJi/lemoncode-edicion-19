@@ -1,0 +1,76 @@
+// Tema B
+
+$primary-font: 'Georgia', serif;
+$secondary-font: 'Arial', sans-serif;
+
+body {
+  font-family: $primary-font;
+  background: #f5f7ff;
+  padding: 30px;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  width: 120px;
+  height: 240px;
+}
+
+.box {
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1 1 0;
+  padding: 10px 8px;
+  border: 1px solid #000;
+  border-radius: 10px;          
+  font-family: $primary-font;
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+}
+
+.box.base {
+  background-color: #0000ff;     
+  color: #ffffff;
+}
+
+.box.important {
+  background-color: #000044;    
+  color: #ffffff;
+}
+
+.box.warning {
+  background-color: #00ffff;    
+  color: #000000;
+}
+
+.principal-font {
+  margin-top: 24px;
+  font-family: $primary-font;
+  font-size: 14px;
+}
+
+.secondary-font {
+  font-family: $secondary-font;
+  font-size: 14px;
+}
+
+.shadow-box {
+  margin-top: 24px;
+  width: 160px;
+  padding: 14px 10px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  font-family: $secondary-font;
+  font-size: 14px;
+  border-radius: 10px;           
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.55); 
+}
