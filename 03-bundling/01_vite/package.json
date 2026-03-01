@@ -1,0 +1,24 @@
+{
+  "name": "01_vite",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "vite": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "rollup-plugin-visualizer": "^7.0.0",
+    "typescript": "^5.9.3",
+    "vite-plugin-compression": "^0.5.1"
+  }
+}
