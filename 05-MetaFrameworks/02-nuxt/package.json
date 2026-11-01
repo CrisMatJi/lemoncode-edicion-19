@@ -1,0 +1,22 @@
+{
+  "name": "02-nuxt",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "run-p -l dev start:api-server",
+    "dev": "nuxt dev",
+    "start:api-server": "cd api-server && npm start",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare && cd api-server && npm install"
+  },
+  "dependencies": {
+    "@nuxt/image": "^2.2.0",
+    "nuxt": "^4.6.2",
+    "vue": "^3.5.44",
+    "vue-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
